@@ -1,3 +1,4 @@
+web: python3 __main__.py
 [[source]]
 name = "pypi"
 url = "https://pypi.org/simple"
