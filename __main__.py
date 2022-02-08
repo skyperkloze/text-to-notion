@@ -1,4 +1,4 @@
-from Bot import Bot
+from bot import Bot
 
 bot = Bot()
 bot.run()
