@@ -33,7 +33,7 @@ class NotionService:
         if not response.ok:
             raise NotionServiceException(response.json())
 
-    def generate_create_page_request_body(self, database_id, text) -> object:
+    def generate_create_page_request_body(self, text) -> object:
         title = text if len(
             text) < self.PAGE_TITLE_MAX_LENGTH else text[:self.PAGE_TITLE_MAX_LENGTH]+'...'
         return {
