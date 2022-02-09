@@ -66,7 +66,7 @@ class Bot:
 
     def error(self, update, context):
         """Log Errors caused by Updates."""
-        logger.warning('Update "%s" caused error "%s"', update, error)
+        logger.warning('Update "%s" caused error "%s"', update, context.error)
 
 
 class BotException(Exception):
