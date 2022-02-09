@@ -51,10 +51,10 @@ class Bot:
                 "⛔ Sorry, you are not authorized for this bot.")
 
     def start_handler(self) -> Type[CommandHandler]:
-        return CommandHandler('start', help)
+        return CommandHandler("start", help)
 
     def help_handler(self) -> Type[CommandHandler]:
-        return CommandHandler('help', help)
+        return CommandHandler("help", help)
 
     def help(self, update, context):
         reply_text = '''
