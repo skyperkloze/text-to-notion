@@ -15,7 +15,7 @@ class NotionService:
     def setup_settings(self) -> None:
         self.api_key: str = os.getenv('NOTION_API_KEY')
         self.page_url: str = os.getenv('NOTION_PAGE_URL')
-self.database_id: str = os.getenv('NOTION_database_id')
+       # self.database_id: str = os.getenv('NOTION_database_id')
         self.page_id: str = self.get_page_id_from_url(self.page_url)
         self.URL_HEADERS = {
             "Authorization": f"Bearer {self.api_key}",
@@ -38,10 +38,11 @@ self.database_id: str = os.getenv('NOTION_database_id')
             text) < self.PAGE_TITLE_MAX_LENGTH else text[:self.PAGE_TITLE_MAX_LENGTH]+'...'
         return {
             "parent": {
-                "database_id": database_id
-            },
+                  "page_id": self.page_id
+                
+               },
             "properties": {
-                "Name": {"title": [{"type": "text", "text": {"content": title}}]},
+                "title": {"title": [{"type": "text", "text": {"content": title}}]},
 
             },
             "children": [
